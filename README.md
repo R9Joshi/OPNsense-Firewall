@@ -1,48 +1,47 @@
-# OPNsense-Firewall
-
 # 🛡️ Enterprise Firewall & IDS/IPS Lab using OPNsense & Suricata
 
-A hands-on enterprise-style network security lab built using **OPNsense Firewall**, **Suricata IDS/IPS**, and **VMware Workstation**. The objective of this project is to simulate real-world attack scenarios, inspect network traffic, detect malicious activities, and automatically block suspicious traffic using Intrusion Prevention System (IPS).
+A hands-on enterprise-style network security lab built using **OPNsense Firewall**, **Suricata IDS/IPS**, and **VMware Workstation**. The lab demonstrates how enterprise firewalls inspect, detect, and block malicious network activity using real-world attack simulations.
 
 ---
 
-# 📌 Project Objectives
+# 📌 Objectives
 
-- Build an enterprise firewall lab
+- Deploy OPNsense Firewall
 - Configure Stateful Firewall Rules
-- Deploy Suricata IDS/IPS
-- Simulate attacks from Kali Linux
-- Detect and block malicious traffic
-- Analyze alerts and firewall logs
+- Enable Suricata IDS/IPS
+- Simulate Cyber Attacks
+- Detect & Block Malicious Traffic
+- Analyze Security Alerts
 
 ---
 
 # 🏗️ Lab Architecture
 
-```
-                   Internet
-                      │
-                 WAN (NAT)
-                      │
-        +---------------------------+
-        |        OPNsense           |
-        | Firewall + Suricata IPS   |
-        +---------------------------+
-                │ LAN (192.168.50.0/24)
-        ┌───────────────┴───────────────┐
-        │                               │
-   Kali Linux                      Windows 10
-   (Attacker)                      (Victim)
+```text
+                  Internet
+                     │
+                WAN (NAT)
+                     │
+        +-------------------------+
+        |       OPNsense          |
+        | Firewall + Suricata IPS |
+        +-------------------------+
+                    │
+          LAN (192.168.50.0/24)
+             ┌──────────────┐
+             │              │
+      Kali Linux       Windows 10
+      (Attacker)        (Victim)
 ```
 
 ---
 
-# 🛠️ Technologies Used
+# 🛠️ Technologies
 
 - VMware Workstation
 - OPNsense Firewall
 - Suricata IDS/IPS
-- Emerging Threats (ET Open) Rules
+- Emerging Threats Rules
 - Kali Linux
 - Windows 10
 
@@ -52,101 +51,118 @@ A hands-on enterprise-style network security lab built using **OPNsense Firewall
 
 - Nmap
 - Nikto
-- Gobuster *(Enumeration only)*
+- Gobuster *(Enumeration Only)*
 
 ---
 
-# ⚙️ Firewall Features
+# ⚙️ Security Features
 
 - Stateful Firewall
-- LAN Security Rules
+- Custom Firewall Rules
 - ICMP Filtering
-- HTTP/HTTPS Inspection
 - Intrusion Detection
 - Intrusion Prevention
 - Real-Time Alerts
-- Firewall Live Logs
+- Live Firewall Logs
 
 ---
 
 # 🧪 Attack Simulation
 
-| Attack Tool | Purpose | Result |
-|-------------|---------|--------|
+| Tool | Purpose | Status |
+|------|---------|--------|
 | Nmap | Port Scanning | ✅ Detected & Blocked |
-| Nikto | Web Server Scan | ✅ Detected & Blocked |
-| Gobuster | Directory Enumeration | ✅ Executed (Detection rules will be expanded in future) |
+| Nikto | Web Server Scanning | ✅ Detected & Blocked |
+| Gobuster | Directory Enumeration | ✅ Executed |
 
 ---
 
-# 🔄 Workflow
+# 📸 Screenshots
 
-```
-Kali Linux
-      │
-      ▼
-Attack Generated
-      │
-      ▼
-OPNsense Firewall
-      │
-      ▼
-Suricata Inspection
-      │
-      ▼
-Rule Matching
-      │
-      ▼
-Alert Generated
-      │
-      ▼
-IPS Block Action
-```
+## VMware Topology
+
+![](screenshot/VMware_Topology.png)
 
 ---
 
-# 📸 Project Screenshots
+## OPNsense Dashboard
 
-- VMware Topology
-- OPNsense Dashboard
-- Firewall Rules
-- Suricata Configuration
-- IPS Mode
-- Nmap Scan
-- Nmap Alert
-- Nikto Scan
-- Nikto Alert
-- Firewall Live Logs
+![](screenshot/OPNsense_Dashboard.png)
 
 ---
 
-# 🎯 Learning Outcomes
+## Firewall Rules
 
-- Firewall Rule Management
+![](screenshot/Firewall_Rules.png)
+
+---
+
+## Suricata Configuration
+
+![](screenshot/Suricata_Settings.png)
+
+---
+
+## IPS Mode Enabled
+
+![](screenshot/IPS_Mode.png)
+
+---
+
+## Nmap Attack
+
+![](screenshot/Nmap_Scan.png)
+
+---
+
+## Nmap Detection Alert
+
+![](screenshot/Nmap_Alert.png)
+
+---
+
+## Nikto Scan
+
+![](screenshot/Nikto_Scan.png)
+
+---
+
+## Nikto Detection Alert
+
+![](screenshot/Nikto_Alert.png)
+
+---
+
+## Firewall Live Logs
+
+![](screenshot/Firewall_Live_Logs.png)
+
+---
+
+# 📚 Skills Demonstrated
+
+- Firewall Administration
 - Network Segmentation
-- IDS vs IPS
-- Suricata Rule Management
-- Attack Detection
-- Threat Monitoring
-- Security Event Analysis
+- IDS & IPS
+- Threat Detection
+- Attack Simulation
+- Security Monitoring
+- Log Analysis
+- Network Security
 
 ---
 
 # 🚀 Future Improvements
 
-- Add custom Suricata rules
-- Improve Gobuster detection
-- Integrate Splunk SIEM
-- Integrate Wazuh
-- Add Sigma-based detections
-- Deploy OWASP Juice Shop for web attack simulations
+- Custom Suricata Rules
+- Gobuster Detection Rules
+- OWASP Juice Shop Integration
+- Splunk SIEM Integration
+- Wazuh Integration
+- Sigma Rule Integration
 
 ---
 
 # 📄 Conclusion
 
-This project demonstrates the deployment of an enterprise-style Firewall and IDS/IPS solution capable of monitoring network traffic, detecting malicious activities, generating alerts, and blocking attacks in real time using open-source security technologies.
-
----
-
-⭐ If you found this project useful, feel free to star the repository.
+This project demonstrates the deployment of an enterprise-grade virtual network security lab capable of monitoring, detecting, and blocking malicious activities using OPNsense Firewall and Suricata IDS/IPS. Attack simulations were performed from Kali Linux using Nmap and Nikto to validate real-time detection and prevention capabilities.
